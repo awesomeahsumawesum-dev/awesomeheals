@@ -14,13 +14,12 @@
 
 ```
     body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         background: #000;
         color: #fff;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Navigation */
     nav {
         background: #000;
         padding: 1rem 1.5rem;
@@ -58,8 +57,6 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        color: #fff;
-        font-weight: 500;
     }
 
     .nav-link:hover {
@@ -70,6 +67,7 @@
         color: #60a5fa;
     }
 
+    /* Page Sections */
     .page {
         display: none;
         min-height: 100vh;
@@ -79,6 +77,7 @@
         display: block;
     }
 
+    /* Home Page */
     #home {
         background: linear-gradient(135deg, #1f2937 0%, #000 50%, #1f2937 100%);
     }
@@ -95,7 +94,7 @@
     }
 
     .logo-img {
-        font-size: 8rem;
+        width: 16rem;
         margin: 0 auto 2rem;
         animation: pulse 2s infinite;
     }
@@ -175,6 +174,7 @@
         font-size: 2.5rem;
     }
 
+    /* Music Page */
     #music {
         background: linear-gradient(135deg, #581c87 0%, #1e3a8a 50%, #000 100%);
     }
@@ -298,6 +298,7 @@
         font-size: 1.5rem;
     }
 
+    /* Gallery Page */
     #gallery {
         background: linear-gradient(135deg, #064e3b 0%, #115e59 50%, #000 100%);
     }
@@ -340,17 +341,20 @@
         overflow: hidden;
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
         transition: all 0.3s;
-        aspect-ratio: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
     }
 
     .gallery-item:hover {
         transform: scale(1.1) rotate(2deg);
     }
 
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+
+    /* Footer */
     footer {
         background: #000;
         padding: 2rem;
@@ -369,24 +373,7 @@
         color: #9ca3af;
     }
 
-    .support-btn {
-        display: inline-block;
-        background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
-        color: white;
-        padding: 0.75rem 2rem;
-        border-radius: 9999px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: transform 0.3s, opacity 0.3s;
-        font-size: 1.125rem;
-        margin-top: 1.5rem;
-    }
-
-    .support-btn:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-
+    /* Animations */
     @keyframes bounce {
         0%, 100% {
             transform: translateY(-25%);
@@ -413,6 +400,7 @@
         animation: pulse 2s infinite;
     }
 
+    /* Responsive */
     @media (max-width: 640px) {
         .nav-links {
             gap: 1rem;
@@ -437,6 +425,8 @@
 </head>
 <body>
 
+```
+<!-- Navigation -->
 <nav>
     <div class="nav-container">
         <div class="logo">Awesome Heals</div>
@@ -454,10 +444,11 @@
     </div>
 </nav>
 
+<!-- Home Page -->
 <div id="home" class="page active">
     <div class="home-container">
         <div class="logo-section">
-            <div class="logo-img">✨</div>
+            <img src="images/logo.png" alt="Awesome Logo" class="logo-img">
             <div class="icon-row">
                 <span class="icon animate-bounce" style="color: #f87171;">♥</span>
                 <span class="icon animate-bounce" style="color: #facc15; animation-delay: 0.1s;">★</span>
@@ -467,34 +458,32 @@
             </div>
         </div>
 
-```
-    <div class="about-card">
-        <h1>About Awesome</h1>
-        <p>Hi I'm Awesome</p>
-        <p>I've been through a tragedy</p>
-        <p>I lost my mother at a young age</p>
-        <p>It broke my heart. We were close. She loved me deeply.</p>
-        <p>As a teenager I got very upset.</p>
-        <p>I took it out on myself. I hurt others.</p>
-        <p>I was confused. I was angry. I was sad.</p>
-        <p class="highlight">Music kept me alive.</p>
-        <p>It gives me purpose. Fills me with joy. Makes me feel understood.</p>
-        <p class="story">This is my story</p>
-        <p class="heals">Awesome heals.</p>
-    </div>
+        <div class="about-card">
+            <h1>About Awesome</h1>
+            <p>Hi I'm Awesome</p>
+            <p>I've been through a tragedy</p>
+            <p>I lost my mother at a young age</p>
+            <p>It broke my heart. We were close. She loved me deeply.</p>
+            <p>As a teenager I got very upset.</p>
+            <p>I took it out on myself. I hurt others.</p>
+            <p>I was confused. I was angry. I was sad.</p>
+            <p class="highlight">Music kept me alive.</p>
+            <p>It gives me purpose. Fills me with joy. Makes me feel understood.</p>
+            <p class="story">This is my story</p>
+            <p class="heals">Awesome heals.</p>
+        </div>
 
-    <div class="bottom-icons">
-        <span class="animate-bounce" style="color: #f87171;">♥</span>
-        <span class="animate-bounce" style="color: #a78bfa; animation-delay: 0.1s;">★</span>
-        <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.2s;">♥</span>
-        <span class="animate-bounce" style="color: #4ade80; animation-delay: 0.3s;">★</span>
-        <span class="animate-bounce" style="color: #facc15; animation-delay: 0.4s;">♥</span>
+        <div class="bottom-icons">
+            <span class="animate-bounce" style="color: #f87171;">♥</span>
+            <span class="animate-bounce" style="color: #a78bfa; animation-delay: 0.1s;">★</span>
+            <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.2s;">♥</span>
+            <span class="animate-bounce" style="color: #4ade80; animation-delay: 0.3s;">★</span>
+            <span class="animate-bounce" style="color: #facc15; animation-delay: 0.4s;">♥</span>
+        </div>
     </div>
 </div>
-```
 
-</div>
-
+<!-- Music Page -->
 <div id="music" class="page">
     <div class="music-container">
         <div class="music-header">
@@ -506,48 +495,46 @@
             </div>
         </div>
 
-```
-    <div class="album-card">
-        <h2 class="phenomenal">Phenomenal</h2>
-        <p>I worked for two years developing this album. I love this album deeply. The calm soothing atmosphere slows down time and allows you to breathe and relax.</p>
-        <div class="button-row">
-            <a href="https://open.spotify.com/album/2QmAAUS8BRTz4p5ZFk3hAw?si=iCPi_OV7RHuqs2JHaNTKtA" target="_blank" class="btn btn-spotify">
-                🎵 Listen on Spotify
-            </a>
-            <a href="https://music.apple.com/us/album/phenomenal/1765654433" target="_blank" class="btn btn-apple">
-                🎵 Listen on Apple Music
-            </a>
+        <div class="album-card">
+            <h2 class="phenomenal">Phenomenal</h2>
+            <p>I worked for two years developing this album. I love this album deeply. The calm soothing atmosphere slows down time and allows you to breathe and relax.</p>
+            <div class="button-row">
+                <a href="https://open.spotify.com/album/2QmAAUS8BRTz4p5ZFk3hAw?si=iCPi_OV7RHuqs2JHaNTKtA" target="_blank" class="btn btn-spotify">
+                    🎵 Listen on Spotify
+                </a>
+                <a href="https://music.apple.com/us/album/phenomenal/1765654433" target="_blank" class="btn btn-apple">
+                    🎵 Listen on Apple Music
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="album-card">
-        <h2 class="reverb">Phenomenal Reverb Edition</h2>
-        <p>I added beautiful reverb to Phenomenal giving a bath of dreamy comforting warmth sound.</p>
-        <div class="button-row">
-            <a href="https://open.spotify.com/album/3FdVMy39TTXY7nfi46Z8jg?si=hxc4wcUjTaGv9EE-Pssrzg" target="_blank" class="btn btn-spotify">
-                🎵 Listen on Spotify
-            </a>
-            <a href="https://music.apple.com/us/album/phenomenal-reverb-edition/1800599050" target="_blank" class="btn btn-apple">
-                🎵 Listen on Apple Music
-            </a>
+        <div class="album-card">
+            <h2 class="reverb">Phenomenal Reverb Edition</h2>
+            <p>I added beautiful reverb to Phenomenal giving a bath of dreamy comforting warmth sound.</p>
+            <div class="button-row">
+                <a href="https://open.spotify.com/album/3FdVMy39TTXY7nfi46Z8jg?si=hxc4wcUjTaGv9EE-Pssrzg" target="_blank" class="btn btn-spotify">
+                    🎵 Listen on Spotify
+                </a>
+                <a href="https://music.apple.com/us/album/phenomenal-reverb-edition/1800599050" target="_blank" class="btn btn-apple">
+                    🎵 Listen on Apple Music
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="music-footer">
-        <p>Every stream supports the healing journey</p>
-        <div class="music-footer-icons">
-            <span class="animate-pulse" style="color: #f87171;">♥</span>
-            <span class="animate-pulse" style="color: #facc15;">★</span>
-            <span class="animate-pulse" style="color: #60a5fa;">♥</span>
-            <span class="animate-pulse" style="color: #4ade80;">★</span>
-            <span class="animate-pulse" style="color: #a78bfa;">♥</span>
+        <div class="music-footer">
+            <p>Every stream supports the healing journey</p>
+            <div class="music-footer-icons">
+                <span class="animate-pulse" style="color: #f87171;">♥</span>
+                <span class="animate-pulse" style="color: #facc15;">★</span>
+                <span class="animate-pulse" style="color: #60a5fa;">♥</span>
+                <span class="animate-pulse" style="color: #4ade80;">★</span>
+                <span class="animate-pulse" style="color: #a78bfa;">♥</span>
+            </div>
         </div>
     </div>
 </div>
-```
 
-</div>
-
+<!-- Gallery Page -->
 <div id="gallery" class="page">
     <div class="gallery-container">
         <div class="gallery-header">
@@ -559,20 +546,30 @@
             </div>
         </div>
 
-```
-    <div class="gallery-grid">
-        <div class="gallery-item" style="background: linear-gradient(135deg, #f87171, #a78bfa);">🎨</div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #60a5fa, #4ade80);">🎵</div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #facc15, #f87171);">✨</div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #a78bfa, #60a5fa);">💫</div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #4ade80, #facc15);">🌟</div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #f87171, #60a5fa);">💝</div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/photo1.jpg" alt="Gallery Photo 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo2.jpg" alt="Gallery Photo 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo3.jpg" alt="Gallery Photo 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo4.jpg" alt="Gallery Photo 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo5.jpg" alt="Gallery Photo 5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo6.jpg" alt="Gallery Photo 6">
+            </div>
+        </div>
     </div>
 </div>
-```
 
-</div>
-
+<!-- Footer -->
 <footer>
     <div class="footer-icons">
         <span class="animate-bounce" style="color: #f87171;">♥</span>
@@ -580,25 +577,32 @@
         <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.4s;">♥</span>
     </div>
     <p>© 2025 Awesome Heals. Made with love and healing.</p>
-    <a href="https://bio.site/AwesomePhenomenalStellar" target="_blank" class="support-btn">
-        💝 Support the Healing Journey
-    </a>
+    <div style="margin-top: 1.5rem;">
+        <a href="https://bio.site/AwesomePhenomenalStellar" target="_blank" style="display: inline-block; background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15); color: white; padding: 0.75rem 2rem; border-radius: 9999px; font-weight: bold; text-decoration: none; transition: transform 0.3s, opacity 0.3s; font-size: 1.125rem;">
+            💝 Support the Healing Journey
+        </a>
+    </div>
 </footer>
 
 <script>
     function showPage(pageName) {
+        // Hide all pages
         const pages = document.querySelectorAll('.page');
         pages.forEach(page => page.classList.remove('active'));
 
+        // Remove active from all nav links
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => link.classList.remove('active'));
 
+        // Show selected page
         document.getElementById(pageName).classList.add('active');
         document.getElementById('nav-' + pageName).classList.add('active');
 
+        // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
+```
 
 </body>
 </html>
