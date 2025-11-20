@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,422 +12,426 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+    }
 
-        /* Navigation */
-        nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1rem 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
+    /* Navigation */
+    nav {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-link {
+        cursor: pointer;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .nav-link:hover {
+        color: #60a5fa;
+    }
+
+    .nav-link.active {
+        color: #60a5fa;
+        text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+    }
+
+    /* Page Sections */
+    .page {
+        display: none;
+        min-height: 100vh;
+    }
+
+    .page.active {
+        display: block;
+    }
+
+    /* Home Page */
+    #home {
+        background: linear-gradient(135deg, #1f2937 0%, #000 50%, #1f2937 100%);
+    }
+
+    .home-container {
+        max-width: 896px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+    }
+
+    .logo-section {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .logo-img {
+        width: 16rem;
+        margin: 0 auto 2rem;
+        animation: pulse 2s infinite;
+    }
+
+    .icon-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+        animation: bounce 1s infinite;
+    }
+
+    .about-card {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 3rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+
+    .about-card:hover {
+        transform: scale(1.05);
+    }
+
+    .about-card h1 {
+        font-size: 2.25rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+        background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .about-card p {
+        color: #1f2937;
+        margin-bottom: 1.5rem;
+        line-height: 1.75;
+    }
+
+    .about-card p:first-of-type {
+        font-size: 1.25rem;
+    }
+
+    .about-card .highlight {
+        font-weight: 600;
+        color: #2563eb;
+    }
+
+    .about-card .story {
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-top: 1rem;
+    }
+
+    .about-card .heals {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 1.5rem;
+        background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .bottom-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        font-size: 2.5rem;
+    }
+
+    /* Music Page */
+    #music {
+        background: linear-gradient(135deg, #581c87 0%, #1e3a8a 50%, #000 100%);
+    }
+
+    .music-container {
+        max-width: 896px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+    }
+
+    .music-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .music-header h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .music-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .album-card {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s;
+    }
+
+    .album-card:hover {
+        transform: scale(1.05);
+    }
+
+    .album-card h2 {
+        font-size: 1.875rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .album-card h2.phenomenal {
+        background: linear-gradient(to right, #9333ea, #2563eb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .album-card h2.reverb {
+        background: linear-gradient(to right, #2563eb, #14b8a6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .album-card p {
+        color: #374151;
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+    }
+
+    .button-row {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
+        padding: 1rem 1.5rem;
+        border-radius: 9999px;
+        font-weight: bold;
+        font-size: 1.125rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: block;
+    }
+
+    .btn-spotify {
+        background: #22c55e;
+        color: white;
+    }
+
+    .btn-spotify:hover {
+        background: #16a34a;
+    }
+
+    .btn-apple {
+        background: linear-gradient(to right, #ec4899, #ef4444);
+        color: white;
+    }
+
+    .btn-apple:hover {
+        opacity: 0.9;
+    }
+
+    .music-footer {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    .music-footer p {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .music-footer-icons {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        font-size: 1.5rem;
+    }
+
+    /* Gallery Page */
+    #gallery {
+        background: linear-gradient(135deg, #064e3b 0%, #115e59 50%, #000 100%);
+    }
+
+    .gallery-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+    }
+
+    .gallery-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .gallery-header h1 {
+        font-size: 2.25rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        animation: pulse 2s infinite;
+    }
+
+    .gallery-header-icons {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .gallery-item {
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.1) rotate(2deg);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+
+    /* Footer */
+    footer {
+        background: #000;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .footer-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        color: #9ca3af;
+    }
+
+    /* Animations */
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(-25%);
+        }
+        50% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .animate-bounce {
+        animation: bounce 1s infinite;
+    }
+
+    .animate-pulse {
+        animation: pulse 2s infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
         .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            cursor: pointer;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            color: #60a5fa;
-        }
-
-        .nav-link.active {
-            color: #60a5fa;
-            text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
-        }
-
-        /* Page Sections */
-        .page {
-            display: none;
-            min-height: 100vh;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        /* Home Page */
-        #home {
-            background: linear-gradient(135deg, #1f2937 0%, #000 50%, #1f2937 100%);
-        }
-
-        .home-container {
-            max-width: 896px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-
-        .logo-section {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .logo-img {
-            width: 16rem;
-            margin: 0 auto 2rem;
-            animation: pulse 2s infinite;
-        }
-
-        .icon-row {
-            display: flex;
-            justify-content: center;
             gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .icon {
-            font-size: 2rem;
-            animation: bounce 1s infinite;
-        }
-
-        .about-card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 3rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-
-        .about-card:hover {
-            transform: scale(1.05);
-        }
-
-        .about-card h1 {
-            font-size: 2.25rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 2rem;
-            background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-card p {
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-            line-height: 1.75;
-        }
-
-        .about-card p:first-of-type {
-            font-size: 1.25rem;
-        }
-
-        .about-card .highlight {
-            font-weight: 600;
-            color: #2563eb;
-        }
-
-        .about-card .story {
-            font-size: 1.25rem;
-            font-weight: 600;
-            padding-top: 1rem;
-        }
-
-        .about-card .heals {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            padding-top: 1.5rem;
-            background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .bottom-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 3rem;
-            font-size: 2.5rem;
-        }
-
-        /* Music Page */
-        #music {
-            background: linear-gradient(135deg, #581c87 0%, #1e3a8a 50%, #000 100%);
-        }
-
-        .music-container {
-            max-width: 896px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-
-        .music-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .music-header h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .music-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-
-        .album-card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s;
-        }
-
-        .album-card:hover {
-            transform: scale(1.05);
-        }
-
-        .album-card h2 {
-            font-size: 1.875rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .album-card h2.phenomenal {
-            background: linear-gradient(to right, #9333ea, #2563eb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .album-card h2.reverb {
-            background: linear-gradient(to right, #2563eb, #14b8a6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .album-card p {
-            color: #374151;
-            font-size: 1.125rem;
-            line-height: 1.75;
-            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
         }
 
         .button-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            flex-direction: column;
         }
 
         .btn {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 1rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            font-size: 1.125rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-        }
-
-        .btn-spotify {
-            background: #22c55e;
-            color: white;
-        }
-
-        .btn-spotify:hover {
-            background: #16a34a;
-        }
-
-        .btn-apple {
-            background: linear-gradient(to right, #ec4899, #ef4444);
-            color: white;
-        }
-
-        .btn-apple:hover {
-            opacity: 0.9;
-        }
-
-        .music-footer {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .music-footer p {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .music-footer-icons {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            font-size: 1.5rem;
-        }
-
-        /* Gallery Page */
-        #gallery {
-            background: linear-gradient(135deg, #064e3b 0%, #115e59 50%, #000 100%);
-        }
-
-        .gallery-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .gallery-header h1 {
-            font-size: 2.25rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
-        }
-
-        .gallery-header-icons {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 3rem;
-            font-size: 2rem;
+            min-width: 100%;
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
         }
+    }
+</style>
+```
 
-        .gallery-item {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.1) rotate(2deg);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            aspect-ratio: 1;
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .footer-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        footer p {
-            color: #9ca3af;
-        }
-
-        /* Animations */
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(-25%);
-            }
-            50% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .animate-bounce {
-            animation: bounce 1s infinite;
-        }
-
-        .animate-pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.875rem;
-            }
-
-            .button-row {
-                flex-direction: column;
-            }
-
-            .btn {
-                min-width: 100%;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
 
 <!-- Navigation -->
+
 <nav>
     <div class="nav-container">
         <div class="logo">Awesome Heals</div>
@@ -445,6 +450,7 @@
 </nav>
 
 <!-- Home Page -->
+
 <div id="home" class="page active">
     <div class="home-container">
         <div class="logo-section">
@@ -458,32 +464,29 @@
             </div>
         </div>
 
-        <div class="about-card">
-            <h1>About Awesome</h1>
-            <p>Hi I'm Awesome</p>
-            <p>I've been through a tragedy</p>
-            <p>I lost my mother at a young age</p>
-            <p>It broke my heart. We were close. She loved me deeply.</p>
-            <p>As a teenager I got very upset.</p>
-            <p>I took it out on myself. I hurt others.</p>
-            <p>I was confused. I was angry. I was sad.</p>
-            <p class="highlight">Music kept me alive.</p>
-            <p>It gives me purpose. Fills me with joy. Makes me feel understood.</p>
-            <p class="story">This is my story</p>
-            <p class="heals">Awesome heals.</p>
-        </div>
-
-        <div class="bottom-icons">
-            <span class="animate-bounce" style="color: #f87171;">♥</span>
-            <span class="animate-bounce" style="color: #a78bfa; animation-delay: 0.1s;">★</span>
-            <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.2s;">♥</span>
-            <span class="animate-bounce" style="color: #4ade80; animation-delay: 0.3s;">★</span>
-            <span class="animate-bounce" style="color: #facc15; animation-delay: 0.4s;">♥</span>
-        </div>
+```
+    <div class="about-card">
+        <h1>About Awesome</h1>
+        <p>Hi Im Awesome</p>
+        <p>I create to make me happy</p>
+        <p>I believe what I make will make you happy too</p>
+        <p class="heals">Awesome Heals</p>
     </div>
+
+    <div class="bottom-icons">
+        <span class="animate-bounce" style="color: #f87171;">♥</span>
+        <span class="animate-bounce" style="color: #a78bfa; animation-delay: 0.1s;">★</span>
+        <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.2s;">♥</span>
+        <span class="animate-bounce" style="color: #4ade80; animation-delay: 0.3s;">★</span>
+        <span class="animate-bounce" style="color: #facc15; animation-delay: 0.4s;">♥</span>
+    </div>
+</div>
+```
+
 </div>
 
 <!-- Music Page -->
+
 <div id="music" class="page">
     <div class="music-container">
         <div class="music-header">
@@ -495,46 +498,60 @@
             </div>
         </div>
 
-        <div class="album-card">
-            <h2 class="phenomenal">Phenomenal</h2>
-            <p>I worked for two years developing this album. I love this album deeply. The calm soothing atmosphere slows down time and allows you to breathe and relax.</p>
-            <div class="button-row">
-                <a href="https://open.spotify.com/album/2QmAAUS8BRTz4p5ZFk3hAw?si=iCPi_OV7RHuqs2JHaNTKtA" target="_blank" class="btn btn-spotify">
-                    🎵 Listen on Spotify
-                </a>
-                <a href="https://music.apple.com/us/album/phenomenal/1765654433" target="_blank" class="btn btn-apple">
-                    🎵 Listen on Apple Music
-                </a>
-            </div>
+```
+    <div class="album-card">
+        <h2 class="phenomenal">Phenomenal</h2>
+        <p>My Phenomenal album is a tranquil calming experience it brings me comfort and peace as I listen to it</p>
+        <div class="button-row">
+            <a href="https://open.spotify.com/album/2QmAAUS8BRTz4p5ZFk3hAw?si=iCPi_OV7RHuqs2JHaNTKtA" target="_blank" class="btn btn-spotify">
+                🎵 Listen on Spotify
+            </a>
+            <a href="https://music.apple.com/us/album/phenomenal/1765654433" target="_blank" class="btn btn-apple">
+                🎵 Listen on Apple Music
+            </a>
         </div>
+    </div>
 
-        <div class="album-card">
-            <h2 class="reverb">Phenomenal Reverb Edition</h2>
-            <p>I added beautiful reverb to Phenomenal giving a bath of dreamy comforting warmth sound.</p>
-            <div class="button-row">
-                <a href="https://open.spotify.com/album/3FdVMy39TTXY7nfi46Z8jg?si=hxc4wcUjTaGv9EE-Pssrzg" target="_blank" class="btn btn-spotify">
-                    🎵 Listen on Spotify
-                </a>
-                <a href="https://music.apple.com/us/album/phenomenal-reverb-edition/1800599050" target="_blank" class="btn btn-apple">
-                    🎵 Listen on Apple Music
-                </a>
-            </div>
+    <div class="album-card">
+        <h2 class="reverb">Phenomenal Reverb Edition</h2>
+        <p>My reverb edition lets my mind wander as my ears trace the blossoming sound of goodness</p>
+        <div class="button-row">
+            <a href="https://open.spotify.com/album/3FdVMy39TTXY7nfi46Z8jg?si=hxc4wcUjTaGv9EE-Pssrzg" target="_blank" class="btn btn-spotify">
+                🎵 Listen on Spotify
+            </a>
+            <a href="https://music.apple.com/us/album/phenomenal-reverb-edition/1800599050" target="_blank" class="btn btn-apple">
+                🎵 Listen on Apple Music
+            </a>
         </div>
+    </div>
 
-        <div class="music-footer">
-            <p>Every stream supports the healing journey</p>
-            <div class="music-footer-icons">
-                <span class="animate-pulse" style="color: #f87171;">♥</span>
-                <span class="animate-pulse" style="color: #facc15;">★</span>
-                <span class="animate-pulse" style="color: #60a5fa;">♥</span>
-                <span class="animate-pulse" style="color: #4ade80;">★</span>
-                <span class="animate-pulse" style="color: #a78bfa;">♥</span>
-            </div>
+    <div class="album-card">
+        <h2 style="background: linear-gradient(to right, #f87171, #facc15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Awesome</h2>
+        <p>My original Awesome album is what inspired me to get Awesome tattooed on my neck and change my name it is that valuable to me</p>
+        <div class="button-row">
+            <a href="https://open.spotify.com/album/4YoGXUOEkPQLPSqUUpMi3u?si=bzHOI9UST-Cmq4AFSn_3Yg" target="_blank" class="btn btn-spotify">
+                🎵 Listen on Spotify
+            </a>
+        </div>
+    </div>
+
+    <div class="music-footer">
+        <p>Every stream supports the healing journey</p>
+        <div class="music-footer-icons">
+            <span class="animate-pulse" style="color: #f87171;">♥</span>
+            <span class="animate-pulse" style="color: #facc15;">★</span>
+            <span class="animate-pulse" style="color: #60a5fa;">♥</span>
+            <span class="animate-pulse" style="color: #4ade80;">★</span>
+            <span class="animate-pulse" style="color: #a78bfa;">♥</span>
         </div>
     </div>
 </div>
+```
+
+</div>
 
 <!-- Gallery Page -->
+
 <div id="gallery" class="page">
     <div class="gallery-container">
         <div class="gallery-header">
@@ -546,30 +563,34 @@
             </div>
         </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/photo1.jpg" alt="Gallery Photo 1">
-            </div>
-            <div class="gallery-item">
-                <img src="images/photo2.jpg" alt="Gallery Photo 2">
-            </div>
-            <div class="gallery-item">
-                <img src="images/photo3.jpg" alt="Gallery Photo 3">
-            </div>
-            <div class="gallery-item">
-                <img src="images/photo4.jpg" alt="Gallery Photo 4">
-            </div>
-            <div class="gallery-item">
-                <img src="images/photo5.jpg" alt="Gallery Photo 5">
-            </div>
-            <div class="gallery-item">
-                <img src="images/photo6.jpg" alt="Gallery Photo 6">
-            </div>
+```
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/photo1.jpg" alt="Gallery Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo2.jpg" alt="Gallery Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo3.jpg" alt="Gallery Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo4.jpg" alt="Gallery Photo 4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo5.jpg" alt="Gallery Photo 5">
+        </div>
+        <div class="gallery-item">
+            <img src="images/photo6.jpg" alt="Gallery Photo 6">
         </div>
     </div>
 </div>
+```
+
+</div>
 
 <!-- Footer -->
+
 <footer>
     <div class="footer-icons">
         <span class="animate-bounce" style="color: #f87171;">♥</span>
