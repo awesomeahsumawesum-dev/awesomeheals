@@ -13,23 +13,16 @@
         }
 
 ```
-    html {
+    html, body {
         margin: 0;
         padding: 0;
         background: #000;
-    }
-
-    body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        background: #000;
         color: #fff;
         overflow-x: hidden;
-        margin: 0;
-        padding: 0;
         min-height: 100vh;
     }
 
-    /* Navigation */
     nav {
         background: rgba(0, 0, 0, 0.95);
         padding: 1rem 1.5rem;
@@ -81,23 +74,17 @@
         text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
     }
 
-    /* Page Sections */
     .page {
         display: none;
-        min-height: 100vh;
-        padding: 0;
-        margin: 0;
+        min-height: calc(100vh - 70px);
     }
 
     .page.active {
         display: block;
     }
 
-    /* Home Page */
     #home {
         background: linear-gradient(135deg, #1f2937 0%, #000 50%, #1f2937 100%);
-        padding: 0;
-        margin: 0;
     }
 
     .home-container {
@@ -162,18 +149,6 @@
 
     .about-card p:first-of-type {
         font-size: 1.25rem;
-        font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
-    }
-
-    .about-card .highlight {
-        font-weight: 600;
-        color: #2563eb;
-    }
-
-    .about-card .story {
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding-top: 1rem;
     }
 
     .about-card .heals {
@@ -195,11 +170,8 @@
         font-size: 2.5rem;
     }
 
-    /* Music Page */
     #music {
         background: linear-gradient(135deg, #581c87 0%, #1e3a8a 50%, #000 100%);
-        padding: 0;
-        margin: 0;
     }
 
     .music-container {
@@ -260,6 +232,13 @@
         background-clip: text;
     }
 
+    .album-card h2.awesome {
+        background: linear-gradient(to right, #f87171, #facc15);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
     .album-card p {
         color: #374151;
         font-size: 1.125rem;
@@ -310,11 +289,6 @@
         margin-top: 3rem;
     }
 
-    .music-footer p {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-    }
-
     .music-footer-icons {
         display: flex;
         justify-content: center;
@@ -322,11 +296,8 @@
         font-size: 1.5rem;
     }
 
-    /* Gallery Page */
     #gallery {
         background: linear-gradient(135deg, #064e3b 0%, #115e59 50%, #000 100%);
-        padding: 0;
-        margin: 0;
     }
 
     .gallery-container {
@@ -380,12 +351,10 @@
         aspect-ratio: 1;
     }
 
-    /* Footer */
     footer {
         background: #000;
         padding: 2rem;
         text-align: center;
-        margin: 0;
     }
 
     .footer-icons {
@@ -400,7 +369,6 @@
         color: #9ca3af;
     }
 
-    /* Animations */
     @keyframes bounce {
         0%, 100% {
             transform: translateY(-25%);
@@ -427,7 +395,6 @@
         animation: pulse 2s infinite;
     }
 
-    /* Responsive */
     @media (max-width: 640px) {
         .nav-links {
             gap: 1rem;
@@ -451,28 +418,16 @@
 
 </head>
 <body>
-
-<!-- Navigation -->
-
 <nav>
     <div class="nav-container">
         <div class="logo">Awesome Heals</div>
         <div class="nav-links">
-            <span class="nav-link active" onclick="showPage('home')" id="nav-home">
-                <span>🏠</span> Home
-            </span>
-            <span class="nav-link" onclick="showPage('music')" id="nav-music">
-                <span>🎵</span> Music
-            </span>
-            <span class="nav-link" onclick="showPage('gallery')" id="nav-gallery">
-                <span>📸</span> Gallery
-            </span>
+            <span class="nav-link active" onclick="showPage('home')" id="nav-home"><span>🏠</span> Home</span>
+            <span class="nav-link" onclick="showPage('music')" id="nav-music"><span>🎵</span> Music</span>
+            <span class="nav-link" onclick="showPage('gallery')" id="nav-gallery"><span>📸</span> Gallery</span>
         </div>
     </div>
 </nav>
-
-<!-- Home Page -->
-
 <div id="home" class="page active">
     <div class="home-container">
         <div class="logo-section">
@@ -485,30 +440,22 @@
                 <span class="icon animate-bounce" style="color: #a78bfa; animation-delay: 0.4s;">♥</span>
             </div>
         </div>
-
-```
-    <div class="about-card">
-        <h1>About Awesome</h1>
-        <p>Hi Im Awesome</p>
-        <p>I create to make me happy</p>
-        <p>I believe what I make will make you happy too</p>
-        <p class="heals">Awesome Heals</p>
-    </div>
-
-    <div class="bottom-icons">
-        <span class="animate-bounce" style="color: #f87171;">♥</span>
-        <span class="animate-bounce" style="color: #a78bfa; animation-delay: 0.1s;">★</span>
-        <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.2s;">♥</span>
-        <span class="animate-bounce" style="color: #4ade80; animation-delay: 0.3s;">★</span>
-        <span class="animate-bounce" style="color: #facc15; animation-delay: 0.4s;">♥</span>
+        <div class="about-card">
+            <h1>About Awesome</h1>
+            <p>Hi Im Awesome</p>
+            <p>I create to make me happy</p>
+            <p>I believe what I make will make you happy too</p>
+            <p class="heals">Awesome Heals</p>
+        </div>
+        <div class="bottom-icons">
+            <span class="animate-bounce" style="color: #f87171;">♥</span>
+            <span class="animate-bounce" style="color: #a78bfa; animation-delay: 0.1s;">★</span>
+            <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.2s;">♥</span>
+            <span class="animate-bounce" style="color: #4ade80; animation-delay: 0.3s;">★</span>
+            <span class="animate-bounce" style="color: #facc15; animation-delay: 0.4s;">♥</span>
+        </div>
     </div>
 </div>
-```
-
-</div>
-
-<!-- Music Page -->
-
 <div id="music" class="page">
     <div class="music-container">
         <div class="music-header">
@@ -519,60 +466,40 @@
                 <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.4s;">🎵</span>
             </div>
         </div>
-
-```
-    <div class="album-card">
-        <h2 class="phenomenal">Phenomenal</h2>
-        <p>My Phenomenal album is a tranquil calming experience it brings me comfort and peace as I listen to it</p>
-        <div class="button-row">
-            <a href="https://open.spotify.com/album/2QmAAUS8BRTz4p5ZFk3hAw?si=iCPi_OV7RHuqs2JHaNTKtA" target="_blank" class="btn btn-spotify">
-                🎵 Listen on Spotify
-            </a>
-            <a href="https://music.apple.com/us/album/phenomenal/1765654433" target="_blank" class="btn btn-apple">
-                🎵 Listen on Apple Music
-            </a>
+        <div class="album-card">
+            <h2 class="phenomenal">Phenomenal</h2>
+            <p>My Phenomenal album is a tranquil calming experience it brings me comfort and peace as I listen to it</p>
+            <div class="button-row">
+                <a href="https://open.spotify.com/album/2QmAAUS8BRTz4p5ZFk3hAw?si=iCPi_OV7RHuqs2JHaNTKtA" target="_blank" class="btn btn-spotify">🎵 Listen on Spotify</a>
+                <a href="https://music.apple.com/us/album/phenomenal/1765654433" target="_blank" class="btn btn-apple">🎵 Listen on Apple Music</a>
+            </div>
         </div>
-    </div>
-
-    <div class="album-card">
-        <h2 class="reverb">Phenomenal Reverb Edition</h2>
-        <p>My reverb edition lets my mind wander as my ears trace the blossoming sound of goodness</p>
-        <div class="button-row">
-            <a href="https://open.spotify.com/album/3FdVMy39TTXY7nfi46Z8jg?si=hxc4wcUjTaGv9EE-Pssrzg" target="_blank" class="btn btn-spotify">
-                🎵 Listen on Spotify
-            </a>
-            <a href="https://music.apple.com/us/album/phenomenal-reverb-edition/1800599050" target="_blank" class="btn btn-apple">
-                🎵 Listen on Apple Music
-            </a>
+        <div class="album-card">
+            <h2 class="reverb">Phenomenal Reverb Edition</h2>
+            <p>My reverb edition lets my mind wander as my ears trace the blossoming sound of goodness</p>
+            <div class="button-row">
+                <a href="https://open.spotify.com/album/3FdVMy39TTXY7nfi46Z8jg?si=hxc4wcUjTaGv9EE-Pssrzg" target="_blank" class="btn btn-spotify">🎵 Listen on Spotify</a>
+                <a href="https://music.apple.com/us/album/phenomenal-reverb-edition/1800599050" target="_blank" class="btn btn-apple">🎵 Listen on Apple Music</a>
+            </div>
         </div>
-    </div>
-
-    <div class="album-card">
-        <h2 style="background: linear-gradient(to right, #f87171, #facc15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Awesome</h2>
-        <p>My original Awesome album is what inspired me to get Awesome tattooed on my neck and change my name it is that valuable to me</p>
-        <div class="button-row">
-            <a href="https://open.spotify.com/album/4YoGXUOEkPQLPSqUUpMi3u?si=bzHOI9UST-Cmq4AFSn_3Yg" target="_blank" class="btn btn-spotify">
-                🎵 Listen on Spotify
-            </a>
+        <div class="album-card">
+            <h2 class="awesome">Awesome</h2>
+            <p>My original Awesome album is what inspired me to get Awesome tattooed on my neck and change my name it is that valuable to me</p>
+            <div class="button-row">
+                <a href="https://open.spotify.com/album/4YoGXUOEkPQLPSqUUpMi3u?si=bzHOI9UST-Cmq4AFSn_3Yg" target="_blank" class="btn btn-spotify">🎵 Listen on Spotify</a>
+            </div>
         </div>
-    </div>
-
-    <div class="music-footer">
-        <div class="music-footer-icons">
-            <span class="animate-pulse" style="color: #f87171;">♥</span>
-            <span class="animate-pulse" style="color: #facc15;">★</span>
-            <span class="animate-pulse" style="color: #60a5fa;">♥</span>
-            <span class="animate-pulse" style="color: #4ade80;">★</span>
-            <span class="animate-pulse" style="color: #a78bfa;">♥</span>
+        <div class="music-footer">
+            <div class="music-footer-icons">
+                <span class="animate-pulse" style="color: #f87171;">♥</span>
+                <span class="animate-pulse" style="color: #facc15;">★</span>
+                <span class="animate-pulse" style="color: #60a5fa;">♥</span>
+                <span class="animate-pulse" style="color: #4ade80;">★</span>
+                <span class="animate-pulse" style="color: #a78bfa;">♥</span>
+            </div>
         </div>
     </div>
 </div>
-```
-
-</div>
-
-<!-- Gallery Page -->
-
 <div id="gallery" class="page">
     <div class="gallery-container">
         <div class="gallery-header">
@@ -583,35 +510,16 @@
                 <span class="animate-bounce" style="color: #60a5fa; animation-delay: 0.4s;">📸</span>
             </div>
         </div>
-
-```
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/photo1.jpg" alt="Gallery Photo 1">
-        </div>
-        <div class="gallery-item">
-            <img src="images/photo2.jpg" alt="Gallery Photo 2">
-        </div>
-        <div class="gallery-item">
-            <img src="images/photo3.jpg" alt="Gallery Photo 3">
-        </div>
-        <div class="gallery-item">
-            <img src="images/photo4.jpg" alt="Gallery Photo 4">
-        </div>
-        <div class="gallery-item">
-            <img src="images/photo5.jpg" alt="Gallery Photo 5">
-        </div>
-        <div class="gallery-item">
-            <img src="images/photo6.jpg" alt="Gallery Photo 6">
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/photo1.jpg" alt="Gallery Photo 1"></div>
+            <div class="gallery-item"><img src="images/photo2.jpg" alt="Gallery Photo 2"></div>
+            <div class="gallery-item"><img src="images/photo3.jpg" alt="Gallery Photo 3"></div>
+            <div class="gallery-item"><img src="images/photo4.jpg" alt="Gallery Photo 4"></div>
+            <div class="gallery-item"><img src="images/photo5.jpg" alt="Gallery Photo 5"></div>
+            <div class="gallery-item"><img src="images/photo6.jpg" alt="Gallery Photo 6"></div>
         </div>
     </div>
 </div>
-```
-
-</div>
-
-<!-- Footer -->
-
 <footer>
     <div class="footer-icons">
         <span class="animate-bounce" style="color: #f87171;">♥</span>
@@ -620,30 +528,19 @@
     </div>
     <p>© 2025 Awesome</p>
     <div style="margin-top: 1.5rem;">
-        <a href="https://bio.site/AwesomePhenomenalStellar" target="_blank" style="display: inline-block; background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15); color: white; padding: 0.75rem 2rem; border-radius: 9999px; font-weight: bold; text-decoration: none; transition: transform 0.3s, opacity 0.3s; font-size: 1.125rem;">
-            💝 Support Awesome
-        </a>
+        <a href="https://bio.site/AwesomePhenomenalStellar" target="_blank" style="display: inline-block; background: linear-gradient(to right, #f87171, #a78bfa, #60a5fa, #4ade80, #facc15); color: white; padding: 0.75rem 2rem; border-radius: 9999px; font-weight: bold; text-decoration: none; transition: transform 0.3s, opacity 0.3s; font-size: 1.125rem;">💝 Support Awesome</a>
     </div>
 </footer>
-
 <script>
-    function showPage(pageName) {
-        // Hide all pages
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(page => page.classList.remove('active'));
-
-        // Remove active from all nav links
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => link.classList.remove('active'));
-
-        // Show selected page
-        document.getElementById(pageName).classList.add('active');
-        document.getElementById('nav-' + pageName).classList.add('active');
-
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+function showPage(pageName) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => link.classList.remove('active'));
+    document.getElementById(pageName).classList.add('active');
+    document.getElementById('nav-' + pageName).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
-
 </body>
 </html>
